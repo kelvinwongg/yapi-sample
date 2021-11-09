@@ -1,0 +1,55 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "ca409d154417ea95d94c701f811cb46d",
+    "packages": [
+        {
+            "name": "kelvinwongg/yapi",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "../composer-package",
+                "reference": "1f2b3be06916b2d2d17dc268bc89387a3d9855cd"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9"
+            },
+            "type": "framework",
+            "autoload": {
+                "psr-4": {
+                    "Kelvinwongg\\Yapi\\": "src/"
+                },
+                "files": [
+                    "src/Util/Helper.php"
+                ]
+            },
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Kelvin Wong",
+                    "email": "kelvinwongg@yahoo.com.hk"
+                }
+            ],
+            "description": "A single declarative yaml document crud api cms framwork, or whatever",
+            "transport-options": {
+                "relative": true
+            }
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "kelvinwongg/yapi": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
+}

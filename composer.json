@@ -1,0 +1,12 @@
+{
+	"minimum-stability": "dev",
+	"require": {
+		"kelvinwongg/yapi": "dev-main"
+	},
+	"repositories": [
+		{
+			"type": "path",
+			"url": "../composer-package"
+		}
+	]
+}
