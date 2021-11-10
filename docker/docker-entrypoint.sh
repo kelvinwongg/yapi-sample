@@ -3,4 +3,5 @@ cp "/var/www/html/sample-project/docker/docker-php-custom.ini" "$PHP_INI_DIR/con
 apt-get update && apt-get install -y libyaml-dev \
 && pecl install xdebug && pecl install yaml \
 && docker-php-ext-enable xdebug yaml
+docker-php-ext-install mysqli pdo pdo_mysql
 /usr/local/bin/docker-php-entrypoint apache2-foreground
