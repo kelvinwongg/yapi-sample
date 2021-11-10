@@ -3,7 +3,7 @@ version: yapi/v1
 kind: Application
 settings:
   database:
-    - host: localhost
+    - host: mysql
       user: root
-      password: asdf1234
-      database: yapi_data
+      password: ttigroup2021
+      database: yapi
