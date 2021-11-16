@@ -1,7 +1,15 @@
 #!/bin/sh
-cp "/var/www/html/sample-project/docker/docker-php-custom.ini" "$PHP_INI_DIR/conf.d/"
+
+# Copy custom php.ini config
+cp "/var/www/html/docker/php-custom.ini" "$PHP_INI_DIR/conf.d/"
+
+# Install Xdebug and YAML extensions
 apt-get update && apt-get install -y libyaml-dev \
 && pecl install xdebug && pecl install yaml \
 && docker-php-ext-enable xdebug yaml
+
+# Install PHP extensions
 docker-php-ext-install mysqli pdo pdo_mysql
+
+# Run the docker php entrypoint
 /usr/local/bin/docker-php-entrypoint apache2-foreground
