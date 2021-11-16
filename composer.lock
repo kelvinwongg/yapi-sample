@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca409d154417ea95d94c701f811cb46d",
+    "content-hash": "8055c66588a4d0df02350b6a32e6d035",
     "packages": [
         {
             "name": "kelvinwongg/yapi",
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "../composer-package",
-                "reference": "1f2b3be06916b2d2d17dc268bc89387a3d9855cd"
+                "url": "../yapi",
+                "reference": "bd6659c7a308885a79da97f82cafcaba74a5c296"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9"
