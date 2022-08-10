@@ -17,4 +17,4 @@ docker run \
 	--network macbook \
 	-v "$PWD":/var/www/html \
 	--entrypoint="/var/www/html/yapi-sample/docker/entrypoint.sh" \
-php:7.4.25-apache
+php:8.1-apache
