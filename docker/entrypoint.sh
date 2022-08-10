@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Copy custom php.ini config
-cp "/var/www/html/yapi-sample/docker/php-custom.ini" "$PHP_INI_DIR/conf.d/"
+cp "/var/www/html/docker/php-custom.ini" "$PHP_INI_DIR/conf.d/"
 
 # Install Xdebug and YAML extensions
 apt-get update && apt-get install -y libyaml-dev \
