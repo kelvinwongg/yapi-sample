@@ -1,0 +1,108 @@
+openapi: 3.0.0
+
+info:
+  version: 2.0.0
+  title: 'SmartBear HR API'
+  description: 'An API that allows users to obtain existing information of employees or post info of new employees'
+  termsOfService: https://kelvinwong.hk/terms-of-use
+  contact:
+    name: Kelvin Wong
+    url: https://kelvinwong.hk
+    email: kelvinwonggg@gmail.com
+  license:
+    name: SmartBear License
+    url: https://license.kelvinwong.hk
+
+servers:
+  - url: https://dev.foo.com/v1
+    description: Dev Server
+  - url: https://prod.foo.com/v1
+    description: Prod Server
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/kelvinwongg/HR_API_OAS3.0/2.0.0
+
+paths:
+  /employees:
+    get:
+      description: 'Obtain information about all employees from the HR database'
+      parameters: 
+        - name: bodyLimit
+          in: query
+          description: The amount of employees returned
+          schema:
+            type: integer
+            minimum: 10
+            maximum: 20
+            example: 15
+        - name: pageLimit
+          in: query
+          description: The pages to return employees info
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 5
+            example: 2
+      responses:
+        200:
+          description: Successful pull of employee info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employees'
+    post:
+      description: 'Create a new employee in the database'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        200:
+          description: 'Successfully created a new employee'
+  /employees/{id}:
+    get:
+      description: 'Obtain information about specific employee'
+      parameters: 
+        - in: path
+          name: id
+          required: true
+          description: 'The ID of the employee'
+          schema:
+            type: integer
+            example: 54
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Employee'
+
+components:
+  schemas:
+    Employees:
+      description: 'Array of employee info'
+      type: array
+      items:
+        $ref: '#/components/schemas/Employee'
+    Employee:
+      description: 'Model containing employee info'
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 4
+        employee_name:
+          type: string
+          example: Ryan Pinkham
+        employee_title:
+          type: string
+          example: Market Manager
