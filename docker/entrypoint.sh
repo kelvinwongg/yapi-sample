@@ -11,5 +11,8 @@ apt-get update && apt-get install -y libyaml-dev \
 # Install PHP extensions
 docker-php-ext-install mysqli pdo pdo_mysql
 
+# Enable Apache Rewrite module
+a2enmod rewrite
+
 # Run the docker php entrypoint
 /usr/local/bin/docker-php-entrypoint apache2-foreground
