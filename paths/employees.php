@@ -4,8 +4,13 @@ namespace YapiSample;
 
 class Employees
 {
-	public function __construct()
+	public function __construct($file, $request, $response, $crudHook)
 	{
-		echo __NAMESPACE__ . '\Employees::__construct()' . '<br>';
+		$response->setContent('added from Employees::__construct');
+	}
+	
+	public function get($file, $request, $response, $crudHook)
+	{
+		$response->setContent('added from Employees::get');
 	}
 }
