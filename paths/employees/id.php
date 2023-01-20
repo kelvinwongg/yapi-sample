@@ -4,7 +4,7 @@ namespace YapiSample\Employees;
 
 class Id
 {
-	public function get($file, $request, $response, $crudHook)
+	public function get($request, $response, $file, $hook)
 	{
 		$response->setContent([
 			'id' => $request->match['path_parameters']['id'],

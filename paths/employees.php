@@ -4,7 +4,7 @@ namespace YapiSample;
 
 class Employees
 {
-	public function get($file, $request, $response, $crudHook)
+	public function get($request, $response, $file, $hook)
 	{
 		$response->setContent([
 			[
@@ -18,5 +18,12 @@ class Employees
 				'employee_title' => 'Admin'
 			]
 		]);
+	}
+
+	public function after($request, $response, $file, $hook)
+	{
+		if ($request->method === 'get') {
+			$response->setContent(array_merge($response->getContent(), [0 => ['after' => 'Added by After Hook']]));
+		}
 	}
 }
