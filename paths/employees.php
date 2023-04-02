@@ -4,7 +4,7 @@ namespace YapiSample;
 
 class Employees
 {
-	public function get($file, $request, $response, $crudHook)
+	public function get($request, $response, $file, $hook)
 	{
 		$response->setContent([
 			[
