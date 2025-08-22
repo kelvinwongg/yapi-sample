@@ -19,4 +19,11 @@ class Employees
 			]
 		]);
 	}
+
+	public function after($request, $response, $file, $hook)
+	{
+		if ($request->method === 'get') {
+			$response->setContent(array_merge($response->getContent(), [0 => ['after' => 'Added by After Hook']]));
+		}
+	}
 }
