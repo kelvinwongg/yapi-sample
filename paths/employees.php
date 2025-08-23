@@ -23,6 +23,7 @@ class Employees
 	public function after($request, $response, $file, $hook)
 	{
 		if ($request->method === 'get') {
+			// Append to respond array
 			$response->setContent(array_merge($response->getContent(), [0 => ['after' => 'Added by After Hook']]));
 		}
 	}

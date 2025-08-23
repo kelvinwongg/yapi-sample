@@ -16,5 +16,7 @@ $yapi->loadYaml('oas/api.yaml');
 $yapi->loadRequest();
 $yapi->checkRequest($yapi->file, $yapi->request);
 $yapi->loadHook();
+$yapi->execBefore($yapi->request, $yapi->response, $yapi->file, $yapi->hook);
 $yapi->execCrud($yapi->request, $yapi->response, $yapi->file, $yapi->hook);
+$yapi->execAfter($yapi->request, $yapi->response, $yapi->file, $yapi->hook);
 $yapi->handleResponse($yapi->response);
